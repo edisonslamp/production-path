@@ -15,7 +15,7 @@ export default function buildWebpackConfig(
     mode,
     entry: paths.entry,
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(isDev),
     },
     resolve: buildResolvers(),
     output: {
