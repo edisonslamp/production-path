@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { MainPageLazy } from "../pages/MainPage/MainPage.lazy";
 import { AboutPageLazy } from "../pages/AboutPage/AboutPage.lazy";
-import "../styles/index.scss";
 import { useTheme } from "../theme/useTheme";
+import "../styles/index.scss";
 
 export const App = () => {
   const { theme, toggleTheme } = useTheme();
