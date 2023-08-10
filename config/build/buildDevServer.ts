@@ -8,5 +8,6 @@ export default function buildDevServer(
   return {
     open: true,
     port,
+    historyApiFallback: true,
   };
 }
