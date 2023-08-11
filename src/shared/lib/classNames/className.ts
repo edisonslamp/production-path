@@ -1,9 +1,9 @@
 type Mods = Record<string, boolean | string>;
 
-export default function className(
+export function className(
   cls: string,
-  mods?: Mods,
-  additional?: string[]
+  mods: Mods,
+  additional: string[],
 ): string {
   const mod: string[] = [];
   Object.entries(mods).forEach(([key, value]) => {

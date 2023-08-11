@@ -1,13 +1,12 @@
-import path from "path";
 import webpack from "webpack";
+import buildDevServer from "./buildDevServer";
 import buildLoaders from "./buildLoaders";
 import buildPlugins from "./buildPlugins";
 import buildResolvers from "./buildResolver";
 import { BuildOptions } from "./types/config";
-import buildDevServer from "./buildDevServer";
 
 export default function buildWebpackConfig(
-  options: BuildOptions
+  options: BuildOptions,
 ): webpack.Configuration {
   const { mode, paths, isDev } = options;
 
@@ -17,7 +16,7 @@ export default function buildWebpackConfig(
     module: {
       rules: buildLoaders(isDev),
     },
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
     output: {
       path: paths.build, // or 'dist' instead
       filename: "[name].[contenthash].js",
