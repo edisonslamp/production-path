@@ -9,9 +9,13 @@ interface NavbarProps {
 
 export const Navbar: FC<NavbarProps> = ({ className }: NavbarProps) => {
   return (
-    <div className={classNames(cls.navbar)}>
-      <Link to={"/"}>Главная страница</Link> <br />
-      <Link to={"/about"}>Страница о сайте</Link>
+    <div className={classNames(cls.Navbar)}>
+      <div className={cls.links}>
+        <Link to={"/"} className={cls.mainLink}>
+          Главная страница
+        </Link>
+        <Link to={"/about"}>Страница о сайте</Link>
+      </div>
     </div>
   );
 };
