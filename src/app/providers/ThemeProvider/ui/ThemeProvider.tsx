@@ -25,4 +25,3 @@ export const ThemeProvider: FC = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-// export default ThemeProvider;
