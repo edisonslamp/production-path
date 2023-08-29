@@ -5,27 +5,27 @@ import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 
 export default function buildPlugins({
-  paths,
-  isDev,
+    paths,
+    isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-  const plugins = [
-    new HtmlWebpackPlugin({
-      template: paths.html,
-    }),
-    new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({
-      filename: "css/[name].[contenthash:8].css",
-      chunkFilename: "css/[name].[contenthash:8].css",
-    }),
+    const plugins = [
+        new HtmlWebpackPlugin({
+            template: paths.html,
+        }),
+        new webpack.ProgressPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "css/[name].[contenthash:8].css",
+            chunkFilename: "css/[name].[contenthash:8].css",
+        }),
 
-    new webpack.DefinePlugin({
-      __IS_DEV: JSON.stringify(isDev),
-    }),
-  ];
-  if (isDev) {
-    plugins.push(new ReactRefreshWebpackPlugin());
-    plugins.push(new webpack.HotModuleReplacementPlugin());
-  }
+        new webpack.DefinePlugin({
+            IS_DEV: JSON.stringify(isDev),
+        }),
+    ];
+    if (isDev) {
+        plugins.push(new ReactRefreshWebpackPlugin());
+        plugins.push(new webpack.HotModuleReplacementPlugin());
+    }
 
-  return plugins;
+    return plugins;
 }
