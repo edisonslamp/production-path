@@ -7,20 +7,20 @@ import { Button, ThemeButton } from "../Button/Button";
 import cls from "./ThemeSwitcher.module.scss";
 
 interface ThemeSwitcherProps {
-  className?: string;
+    className?: string;
 }
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
-  const { className } = props;
-  const { theme, toggleTheme } = useTheme();
+    const { className } = props;
+    const { theme, toggleTheme } = useTheme();
 
-  return (
-    <Button
-      theme={ThemeButton.CLEAR}
-      onClick={toggleTheme}
-      className={classNames(cls.ThemeSwitcher, {}, [className])}
-    >
-      {theme === Themes.LIGHT ? <DarkIcon /> : <LightIcon />}
-    </Button>
-  );
+    return (
+        <Button
+            theme={ThemeButton.CLEAR}
+            onClick={toggleTheme}
+            className={classNames(cls.ThemeSwitcher, {}, [className])}
+        >
+            {theme === Themes.LIGHT ? <DarkIcon /> : <LightIcon />}
+        </Button>
+    );
 };

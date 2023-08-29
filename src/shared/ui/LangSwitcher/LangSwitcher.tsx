@@ -6,21 +6,21 @@ import { Button, ThemeButton } from "../Button/Button";
 import cls from "./LangSwitcher.module.scss";
 
 interface LangSwitcherProps {
-  className?: string;
+    className?: string;
 }
 export const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
-  const { t, i18n } = useTranslation();
-  const toggleLang = () => {
-    i18next.changeLanguage(i18n.language === "ru" ? "en" : "ru");
-  };
+    const { t, i18n } = useTranslation();
+    const toggleLang = () => {
+        i18next.changeLanguage(i18n.language === "ru" ? "en" : "ru");
+    };
 
-  return (
-    <Button
-      theme={ThemeButton.CLEAR}
-      onClick={toggleLang}
-      className={classNames(cls.LangSwitcher, {}, [className])}
-    >
-      {t("Язык")}
-    </Button>
-  );
+    return (
+        <Button
+            theme={ThemeButton.CLEAR}
+            onClick={toggleLang}
+            className={classNames(cls.LangSwitcher, {}, [className])}
+        >
+            {t("Язык")}
+        </Button>
+    );
 };

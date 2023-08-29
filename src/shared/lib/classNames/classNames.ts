@@ -1,18 +1,18 @@
 type Mods = Record<string, boolean | string>;
 
 export function classNames(
-  cls: string,
-  mods: Mods = {},
-  additional: string[] = [],
+    cls: string,
+    mods: Mods = {},
+    additional: string[] = [],
 ): string {
-  const mod: string[] = [];
-  Object.entries(mods).forEach(([key, value]) => {
-    if (value) {
-      mod.push(key);
-    }
-  });
+    const mod: string[] = [];
+    Object.entries(mods).forEach(([key, value]) => {
+        if (value) {
+            mod.push(key);
+        }
+    });
 
-  return [cls, ...additional, ...mod].join(" ");
+    return [cls, ...additional, ...mod].join(" ");
 }
 
 // Пример как должна вызываться подобная функция
