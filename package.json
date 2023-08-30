@@ -6,7 +6,11 @@
     "scripts": {
         "start": "webpack serve --env port=3000",
         "build:prod": "webpack --env mode=production",
-        "build:dev": "webpack --env mode=development"
+        "build:dev": "webpack --env mode=development",
+        "lint:ts": "eslint \"**/*.{tsx, ts}\"",
+        "lint:ts:fix": "eslint \"**/*.{tsx, ts}\" --fix",
+        "format:ts": "prettier . --check",
+        "format:ts:fix": "prettier . --write"
     },
     "keywords": [],
     "author": "",
@@ -41,7 +45,7 @@
         "style-loader": "^3.3.3",
         "ts-loader": "^9.2.6",
         "ts-node": "^10.5.0",
-        "typescript": "^5.2.2",
+        "typescript": "^4.5.5",
         "webpack": "^5.88.2",
         "webpack-cli": "^4.10.0",
         "webpack-dev-server": "^4.7.4"
