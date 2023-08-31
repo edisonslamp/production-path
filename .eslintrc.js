@@ -8,8 +8,10 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
+        "plugin:i18next/recommended",
         "plugin:prettier/recommended",
     ],
+    parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
@@ -17,7 +19,7 @@ module.exports = {
             jsx: true,
         },
     },
-    plugins: ["react", "@typescript-eslint", "prettier"],
+    plugins: ["react", "@typescript-eslint", "i18next", "prettier"],
     rules: {
         "@typescript-eslint/prefer-nullish-coalescing": [
             0,
