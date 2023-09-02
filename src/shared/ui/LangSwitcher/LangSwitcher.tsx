@@ -1,7 +1,7 @@
 import i18next from "i18next";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "../../lib/classNames";
+import { classNames } from "../../lib";
 import { Button, ThemeButton } from "../Button/Button";
 
 interface LangSwitcherProps {
