@@ -1,3 +1,4 @@
+import { BugButton } from "@/app/providers/ErrorBoundary";
 import { classNames } from "@/shared/lib";
 import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink";
 import { FC } from "react";
@@ -14,6 +15,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
+                <BugButton />
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
                     to={"/"}
