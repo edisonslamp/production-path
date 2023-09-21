@@ -10,7 +10,7 @@
         "module": "ESNext",
         // в какую спецификацию компилируем, в 5ую чтобы большинство браузеров поддерживало
         "target": "es5",
-        "baseUrl": "./",
+        "baseUrl": ".",
         // говорит о том что все абсолютные импорты\экспорты будут идти из папки src
         "paths": {
             "@/*": ["src/*"]
@@ -22,13 +22,13 @@
         // позволяет работать с модулями по CommonJS, такие как через require так и import/export
         "esModuleInterop": true,
         // этот флаг позволяет не использовать import * as, а просто указывать имя пакета даже если он экспортируется по дефолту
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
     },
+    "include": ["./config/jest/setupTests.ts"],
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
     },
-    "include": ["./config/jest/setupTests.ts"]
 
 }
