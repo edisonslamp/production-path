@@ -7,8 +7,8 @@ export default function buildResolvers(options: BuildOptions): ResolveOptions {
         extensions: [".tsx", ".ts", ".js"], // import test from ./test(without extensions)
         preferAbsolute: true,
         mainFiles: ["index"],
-        alias: {
-            "@": [options.paths.src],
-        },
+        // alias: {
+        //     "@": [options.paths.src],
+        // },
     };
 }

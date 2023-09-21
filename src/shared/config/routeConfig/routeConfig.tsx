@@ -1,6 +1,6 @@
-import { AboutPage } from "@/pages/AboutPage";
-import { MainPage } from "@/pages/MainPage";
-import { NotFoundPage } from "@/pages/NotFoundPage";
+import { AboutPage } from "pages/AboutPage";
+import { MainPage } from "pages/MainPage";
+import { NotFoundPage } from "pages/NotFoundPage";
 import { RouteProps } from "react-router-dom";
 
 // это нужно для того если мы хотим хранить информацию с стейте (Redux ToolKit, ect.)
