@@ -1,5 +1,5 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { FC } from "react";
+import { classNames } from "shared/lib";
 import "./LoaderIcon.scss";
 
 interface LoaderIconProps {

@@ -1,6 +1,6 @@
-import { classNames } from "@/shared/lib";
 import { FC } from "react";
-import { LoaderIcon } from "@/shared/ui";
+import { classNames } from "shared/lib";
+import { LoaderIcon } from "shared/ui";
 import cls from "./LoaderPage.module.scss";
 
 interface LoaderPageProps {
