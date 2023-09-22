@@ -1,5 +1,7 @@
 import { fireEvent, screen } from "@testing-library/react";
-import { renderWithTranslations } from "shared/lib";
+
+// absolute import from shared/lib using public API doesn't work somehow
+import { renderWithTranslations } from "shared/lib/tests/renderWithTranslations/renderWithTranslations";
 import { Sidebar } from "./Sidebar";
 
 describe("Sidebar", () => {
