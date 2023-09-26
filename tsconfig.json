@@ -26,8 +26,14 @@
     },
 
     // when the config is included then absolute imports stop working
-    // "include": [
-    //     "./config/jest/setupTests.ts" ],
+    // when you use include it will disable automatic add ts files
+    "include": [
+        "config/**/*",
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
+        "./config/jest/setupTests.ts",
+
+    ],
     
     "ts-node": {
         "compilerOptions": {

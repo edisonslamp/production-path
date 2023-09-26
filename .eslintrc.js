@@ -39,6 +39,7 @@ module.exports = {
         "@typescript-eslint/ban-ts-comment": [0],
         "@typescript-eslint/no-confusing-void-expression": [0],
         "@typescript-eslint/no-unused-vars": [0],
+        "@typescript-eslint/consistent-type-assertions": [0],
 
         // Handle this later
         // "@typescript-eslint/naming-convention": [
