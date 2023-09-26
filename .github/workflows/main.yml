@@ -9,16 +9,16 @@ jobs:
     pipline:
         runs-on: ubuntu-latest
         strategy:
-            matrix:
-                node: [17.x]
+          matrix:
+              node: [17.x]
 
     steps:
       - name: Checkout master branch
-        uses: actions/checkout@v3
+          uses: actions/checkout@v3
       - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-          with:
-           node-version: ${{ matrix.node }}
+          uses: actions/setup-node@v3
+            with:
+              node-version: ${{ matrix.node }}
 
                     - name: install modules
                       run: npm install
