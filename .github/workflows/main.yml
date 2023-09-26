@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
           matrix:
-              node: [17.x]
+            node: [17.x]
   steps:
       - name: Checkout master branch
         uses: actions/checkout@v3
