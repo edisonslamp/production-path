@@ -1,36 +1,36 @@
 name: linting, testing, building
 on:
-    push:
-      branches: [master]
-    pull_request: 
-      branches: [master]
+ push:
+  branches: [master]
+ pull_request: 
+  branches: [master]
 jobs:
-    pipline:
-        runs-on: ubuntu-latest
-        strategy:
-          matrix:
-            node: [17.x]
-  steps:
-      - name: Checkout master branch
-        uses: actions/checkout@v3
-      - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-        node-version: ${{ matrix.node }}
-      - name: install modules
-        run: npm install
-      - name: build production project
-        run: npm run build:prod
-      - name: linting typescript
-        run: npm run lint:ts
-      - name: linting css
-        run: npm run lint:scss
-      - name: checking formatting
-        run: npm run format
-      - name: unit testing
-        run: npm run test:unit
-      - name: ui testing
-        run: npm run test:ui
+ pipline:
+  runs-on: ubuntu-latest
+   strategy:
+    matrix:
+     node: [17.x]
+   steps:
+    - name: Checkout master branch
+      uses: actions/checkout@v3
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+       node-version: ${{ matrix.node }}
+    - name: install modules
+      run: npm install
+    - name: build production project
+      run: npm run build:prod
+    - name: linting typescript
+      run: npm run lint:ts
+    - name: linting css
+      run: npm run lint:scss
+    - name: checking formatting
+      run: npm run format
+    - name: unit testing
+      run: npm run test:unit
+    - name: ui testing
+      run: npm run test:ui
 
 
 
