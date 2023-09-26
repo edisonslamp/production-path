@@ -5,16 +5,15 @@ on:
  pull_request: 
   branches: [master]
 jobs:
- pipline:
+ pipeline:
   runs-on: ubuntu-latest
   strategy:
    matrix:
-    node: [17.x]
+    node: ["17.x"]
   steps:
-    - name: Checkout master branch
-      uses: actions/checkout@v3
-    - name: Setup Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/checkout@v4
+    - name: Starting Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
       with:
        node-version: ${{ matrix.node }}
     - name: install modules
