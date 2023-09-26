@@ -14,7 +14,7 @@ jobs:
 
     steps:
         - uses: actions/checkout@v2
-              - name: Setup Node.js ${{ matrix.node-version }}
+              - name: Setup Node.js
                 uses: actions/setup-node@v1
                 with:
                     node-version: ${{ matrix.node-version }}
@@ -23,15 +23,15 @@ jobs:
                       run: npm install
                     - name: build production project
                       run: npm run build:prod
-                       name: linting typescript
+                    - name: linting typescript
                       run: npm run lint:ts
-                       name: linting css
+                    - name: linting css
                       run: npm run lint:scss
-                       name: checking formatting
+                    - name: checking formatting
                       run: npm run format
-                       name: unit testing
+                    - name: unit testing
                       run: npm run test:unit
-                       name: ui testing
+                    - name: ui testing
                       run: npm run test:ui
 
 
