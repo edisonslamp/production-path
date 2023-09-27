@@ -15,7 +15,7 @@ jobs:
   steps:
    - uses: actions/checkout@v4
    - name: Starting Node.js ${{ matrix.node-version }}
-   - uses: actions/setup-node@v3
+     uses: actions/setup-node@v3
      with:
       node-version: ${{ matrix.node-version }}
    - name: install modules
@@ -32,8 +32,3 @@ jobs:
      run: npm run test:unit
    - name: ui testing
      run: npm run test:ui
-
-
-
-
-                    
