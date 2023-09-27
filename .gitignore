@@ -2,7 +2,7 @@
 /build
 
 # Prettier
-.prettierignore
+# .prettierignore
 
 # Finder 
 .DS_Store
