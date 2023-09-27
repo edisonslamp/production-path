@@ -1,0 +1,8 @@
+# Ignore all JSON files
+**/*.json
+
+# Ignore all HTML files
+**/*.html
+
+# Ignore all YAML files
+**/*.yml
