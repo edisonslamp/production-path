@@ -1,6 +1,7 @@
-import { BugButton } from "app/providers/ErrorBoundary";
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
+import AboutIcon from "shared/assets/icons/about-link.svg";
+import MainIcon from "shared/assets/icons/main-link.svg";
 import { RoutePath } from "shared/config";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink, AppLinkTheme, LangSwitcher, ThemeSwitcher } from "shared/ui";
@@ -39,21 +40,31 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
             </Button>
 
             <div className={cls.items}>
-                <BugButton />
-                <AppLink
-                    theme={AppLinkTheme.SECONDARY}
-                    to={RoutePath.main}
-                    className={cls.link}
-                >
-                    {t("Главная страница")}
-                </AppLink>
-                <AppLink
-                    theme={AppLinkTheme.SECONDARY}
-                    to={RoutePath.about}
-                    className={cls.link}
-                >
-                    {t("Страница о сайте")}
-                </AppLink>
+                {/* <BugButton />  */}
+                <div>
+                    <AppLink
+                        theme={AppLinkTheme.SECONDARY}
+                        to={RoutePath.main}
+                        className={cls.item}
+                    >
+                        <MainIcon className={cls.icon} />
+                        <span className={cls.link}>
+                            {t("Главная страница")}
+                        </span>
+                    </AppLink>
+                </div>
+                <div>
+                    <AppLink
+                        theme={AppLinkTheme.SECONDARY}
+                        to={RoutePath.about}
+                        className={cls.item}
+                    >
+                        <AboutIcon className={cls.icon} />
+                        <span className={cls.link}>
+                            {t("Страница о сайте")}
+                        </span>
+                    </AppLink>
+                </div>
             </div>
 
             <div className={cls.switchers}>
