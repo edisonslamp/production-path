@@ -7,6 +7,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink, AppLinkTheme, LangSwitcher, ThemeSwitcher } from "shared/ui";
 import { Button, SizeButton, ThemeButton } from "shared/ui/Button/Button";
 import cls from "./Sidebar.module.scss";
+
 interface SidebarProps {
     className?: string;
 }
