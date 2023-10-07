@@ -20,7 +20,13 @@ module.exports = {
             jsx: true,
         },
     },
-    plugins: ["react", "@typescript-eslint", "i18next", "prettier"],
+    plugins: [
+        "react",
+        "@typescript-eslint",
+        "i18next",
+        "react-hooks",
+        "prettier",
+    ],
     rules: {
         "@typescript-eslint/prefer-nullish-coalescing": [
             0,
@@ -60,6 +66,8 @@ module.exports = {
         "promise/param-names": [0],
         "react/jsx-props-no-spreading": [1],
         "prettier/prettier": "error",
+        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+        "react-hooks/exhaustive-deps": "error",
     },
     ignorePatterns: [".eslintrc.js"],
 };

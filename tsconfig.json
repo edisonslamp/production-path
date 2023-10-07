@@ -13,7 +13,7 @@
         "baseUrl": ".",
         // говорит о том что все абсолютные импорты\экспорты будут идти из папки src
         "paths": {
-          "*": ["./src/*"] 
+            "*": ["./src/*"]
         },
         "jsx": "react-jsx",
         // компилятор может обраьатывать не только ts файлы, но и js файлы
@@ -22,7 +22,7 @@
         // позволяет работать с модулями по CommonJS, такие как через require так и import/export
         "esModuleInterop": true,
         // этот флаг позволяет не использовать import * as, а просто указывать имя пакета даже если он экспортируется по дефолту
-        "allowSyntheticDefaultImports": true,
+        "allowSyntheticDefaultImports": true
     },
 
     // when the config is included then absolute imports stop working
@@ -31,14 +31,12 @@
         "config/**/*",
         "./src/**/*.ts",
         "./src/**/*.tsx",
-        "./config/jest/setupTests.ts",
-
+        "./config/jest/setupTests.ts"
     ],
-    
+
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
-    },
-
+    }
 }
