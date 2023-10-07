@@ -1,8 +1,7 @@
-import { BugButton } from "app/providers/ErrorBoundary";
-import { FC } from "react";
+import { FC, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { Button, Modal, ThemeButton } from "shared/ui";
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
@@ -10,23 +9,29 @@ interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = ({ className }) => {
-    const { t } = useTranslation("translation");
+    const { t } = useTranslation();
+
+    const [isOpen, setIsOpen] = useState(false);
+    const [isAuthModal, setIsAuthModal] = useState(false);
+
+    const onToggleModal = useCallback(() => {
+        setIsAuthModal((prev) => !prev);
+    }, []);
 
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
-            <div className={cls.links}>
-                <BugButton />
-                <AppLink
-                    theme={AppLinkTheme.SECONDARY}
-                    to={"/"}
-                    className={cls.mainLink}
-                >
-                    {t("Главная страница")}
-                </AppLink>
-                <AppLink theme={AppLinkTheme.SECONDARY} to={"/about"}>
-                    {t("Страница о сайте")}
-                </AppLink>
-            </div>
+            <Button
+                theme={ThemeButton.CLEAR_INVERTED}
+                className={cls.links}
+                onClick={onToggleModal}
+            >
+                {t("Войти")}
+            </Button>
+            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
+                {t(
+                    "Hello! I'm your first modal window! You would be happy seenig me here!",
+                )}
+            </Modal>
         </div>
     );
 };
