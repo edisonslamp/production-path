@@ -1,14 +1,36 @@
-import { FC } from "react";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button, Input } from "shared/ui";
+import { Button, Input, ThemeButton } from "shared/ui";
+import { getLoginState } from "../../model/selectors/getLoginState/getLoginState";
+import { loginActions } from "../../model/slice/loginSlice";
 import cls from "./LoginForm.module.scss";
 
 interface LoginFormProps {
     className?: string;
 }
-export const LoginForm: FC<LoginFormProps> = ({ className }) => {
+export const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
+    const dispatch = useDispatch();
+    const { username, password } = useSelector(getLoginState);
+
+    const onChangeUsername = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setUsername(value));
+        },
+        [dispatch],
+    );
+
+    const onChangePassword = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setPassword(value));
+        },
+        [dispatch],
+    );
+
+    const onLoginClick = useCallback(() => {}, []);
+
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
             <Input
@@ -16,13 +38,23 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
                 type="text"
                 className={cls.input}
                 placeholder={t("Введите username")}
+                onChange={onChangeUsername}
+                value={username}
             />
             <Input
                 type="text"
                 className={cls.input}
                 placeholder={t("Введите пароль")}
+                onChange={onChangePassword}
+                value={password}
             />
-            <Button className={cls.loginBtn}>{t("Войти")}</Button>
+            <Button
+                theme={ThemeButton.OUTLINE}
+                className={cls.loginBtn}
+                onClick={onLoginClick}
+            >
+                {t("Войти")}
+            </Button>
         </div>
     );
-};
+});

@@ -1,6 +1,7 @@
 import { ReducersMapObject, configureStore } from "@reduxjs/toolkit";
 import { counterReducer } from "entities/Counter";
 import { userReducer } from "entities/User";
+import { loginReducer } from "features/AuthByUsername";
 import { StateSchema } from "./StateSchema";
 
 // Оборачиваем конфигурацию в отдельную функцию чтобы потом можно было ее перееиспользовать где-нибудь в тестах
@@ -9,6 +10,7 @@ export function createReduxStore(initialState?: StateSchema) {
     const rootReducers: ReducersMapObject<StateSchema> = {
         counter: counterReducer,
         user: userReducer,
+        loginForm: loginReducer,
     };
 
     // определим схему для типа, которая будет принимать эта функция

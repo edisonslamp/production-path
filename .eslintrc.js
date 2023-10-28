@@ -68,6 +68,7 @@ module.exports = {
         "prettier/prettier": "error",
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
         "react-hooks/exhaustive-deps": "error",
+        "react/display-name": "off",
     },
     ignorePatterns: [".eslintrc.js"],
 };
