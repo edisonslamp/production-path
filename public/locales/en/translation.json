@@ -5,5 +5,8 @@
     "Произошла непредвиденная ошибка": "Something went wrong",
     "Обновить": "Refresh",
     "Сокращенный": "Рус",
-    "Войти": "Login"
+    "Войти": "Login",
+    "Форма авторизации": "Authorization form",
+    "Вы ввели неверный логин или пароль": "You entered wrong username or password",
+    "Выйти": "Logout"
 }
