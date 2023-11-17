@@ -1,7 +1,7 @@
 import { fireEvent, screen } from "@testing-library/react";
 
 // absolute import from shared/lib using public API doesn't work somehow
-import { componentRender } from "shared/lib/tests/componentRender/componentRender";
+import { componentRender } from "../../../../shared/lib/tests/componentRender/componentRender";
 import { Sidebar } from "./Sidebar";
 
 describe("Sidebar", () => {
