@@ -5,9 +5,13 @@ import { StateSchema } from "./StateSchema";
 import { createReducerManager } from "./reducerManager";
 
 // Оборачиваем конфигурацию в отдельную функцию чтобы потом можно было ее перееиспользовать где-нибудь в тестах
-export function createReduxStore(initialState?: StateSchema) {
+export function createReduxStore(
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>,
+) {
     // определили изначальное состояние (initialState) для использования в сторибуках
     const rootReducers: ReducersMapObject<StateSchema> = {
+        ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
     };
