@@ -8,22 +8,22 @@ import { useDispatch, useStore } from "react-redux";
 
 interface DynamicModuleLoaderProps {
     children: ReactNode;
-    key: StateSchemaKey;
+    name: StateSchemaKey;
     reducer: Reducer;
 }
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
-    const { children, key, reducer } = props;
+    const { children, name, reducer } = props;
 
     const store = useStore() as ReduxStoreWithManager;
     const dispatch = useDispatch();
 
     useEffect(() => {
-        store.reducerManager.add(key, reducer);
-        dispatch({ type: `@INIT ${key} reducer` });
+        store.reducerManager.add(name, reducer);
+        dispatch({ type: `@INIT ${name} reducer` });
 
         return () => {
-            store.reducerManager.remove(key);
-            dispatch({ type: `@DESTROY ${key} reducer` });
+            store.reducerManager.remove(name);
+            dispatch({ type: `@DESTROY ${name} reducer` });
         };
         // eslint-disable-next-line
     }, []);

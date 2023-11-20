@@ -42,7 +42,7 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     }, [dispatch, username, password]);
 
     return (
-        <DynamicModuleLoader key={"loginForm"} reducer={loginReducer}>
+        <DynamicModuleLoader name={"loginForm"} reducer={loginReducer}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text text={t("Форма авторизации")} />
                 {error && <Text text={error} theme={TextTheme.ERROR} />}
