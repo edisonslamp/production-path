@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { DynamicModuleLoader } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
+import { ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { Button, Input, Text, TextTheme, ThemeButton } from "shared/ui";
 import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
@@ -15,6 +16,11 @@ import cls from "./LoginForm.module.scss";
 export interface LoginFormProps {
     className?: string;
 }
+
+const initialReducers: ReducerList = {
+    loginForm: loginReducer,
+};
+
 const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
@@ -42,7 +48,10 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     }, [dispatch, username, password]);
 
     return (
-        <DynamicModuleLoader name={"loginForm"} reducer={loginReducer}>
+        <DynamicModuleLoader
+            removeAfterUnmount={true}
+            reducers={initialReducers}
+        >
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text text={t("Форма авторизации")} />
                 {error && <Text text={error} theme={TextTheme.ERROR} />}
