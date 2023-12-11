@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Text.module.scss";
@@ -14,7 +14,7 @@ interface TextProps {
     text?: string;
     theme?: TextTheme;
 }
-export const Text: FC<TextProps> = (props) => {
+export const Text = memo((props: TextProps) => {
     const { className, text, title, theme = TextTheme.PRIMARY } = props;
 
     const { t } = useTranslation();
@@ -28,4 +28,4 @@ export const Text: FC<TextProps> = (props) => {
             {text && <p className={cls.text}>{text}</p>}
         </div>
     );
-};
+});

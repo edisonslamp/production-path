@@ -1,5 +1,5 @@
 import i18next from "i18next";
-import { FC } from "react";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "../../lib";
 import { Button, ThemeButton } from "../Button/Button";
@@ -8,7 +8,7 @@ interface LangSwitcherProps {
     className?: string;
     short?: boolean;
 }
-export const LangSwitcher: FC<LangSwitcherProps> = ({ className, short }) => {
+export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation();
     const toggleLang = () => {
         i18next.changeLanguage(i18n.language === "ru" ? "en" : "ru");
@@ -23,4 +23,4 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({ className, short }) => {
             {t(short ? "Сокращенный" : "Язык")}
         </Button>
     );
-};
+});

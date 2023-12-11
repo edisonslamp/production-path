@@ -14,5 +14,13 @@
             "password": "123"
         }
     ],
-    "profile": { "name": "typicode" }
+    "profile": {
+        "first": "Eduard",
+        "lastname": "Miterev",
+        "age": 30,
+        "currency": "EUR",
+        "country": "Serbia",
+        "city": "Belgrade",
+        "username": "admin",
+        "avatar": "https://i.pinimg.com/564x/26/b4/7f/26b47f45044c0fb57319bd263a6ed74e.jpg"
 }
