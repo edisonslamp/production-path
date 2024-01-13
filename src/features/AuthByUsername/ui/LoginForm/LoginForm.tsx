@@ -79,6 +79,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 <Button
                     theme={ThemeButton.OUTLINE}
                     className={cls.loginBtn}
+                    // eslint-disable-next-line
                     onClick={onLoginClick}
                     disabled={isLoading}
                 >

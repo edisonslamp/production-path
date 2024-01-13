@@ -19,5 +19,6 @@ export default {
     },
     globals: {
         IS_DEV: true,
+        _API_: "",
     },
 };

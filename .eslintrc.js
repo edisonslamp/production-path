@@ -3,6 +3,11 @@ module.exports = {
         browser: true,
         es2021: true,
     },
+
+    globals: {
+        IS_DEV: true,
+        _API_: true,
+    },
     extends: [
         "standard-with-typescript",
         "plugin:@typescript-eslint/recommended",
